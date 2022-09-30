@@ -1,21 +1,14 @@
-An example project that uses [php-actions/composer][composer-link]
-===
+Faux-Bank
+=========
 
-This is a trivial project that holds only simple example functionality: a repository that installs its dependencies (a WebEngine application) plus a private repository. The private repository is hosted on Github at https://github.com/php-actions/example-private-repo (the link will return 404 due to it being private).
+A proof of concept project that demonstrates oWASP.org's top 10 web vulnerabilities
 
-An SSH key has been generated specifically for this project. It is a typical public/private pair of RSA keys. The example-private-repo repository has the key added as a read-only deploy key, so anyone with access to the key can clone the repo (but not push). The key pair is stored in this repository as a [Github Secret][secret].
+This is the Classic ASP Version of Faux Bank.
 
-Check out the [Actions tab in the Github repository][actions-tab] to see the past actions workflows and their outputs. You will see that both the [public repo for `phpgt/webengine`][webengine-link] and the [private repo for `php-actions/example-private-repo`][example-private-repo-link] are downloaded successfully.
+To setup, you will need IIS and SQL Server
 
-The file at .github/workflows/ci.yml shows how to use [php-actions/composer][composer-link].
+Run "fauxbank setup script.sql" to setup the database.
 
-*** 
+Edit the web.config file and add your SQL server instance name to this line:
 
-If you found this repository helpful, please consider [sponsoring the developer][sponsor].
-
-[secret]: https://docs.github.com/en/actions/configuring-and-managing-workflows/creating-and-storing-encrypted-secrets
-[composer-link]: https://github.com/php-actions/composer
-[actions-tab]: https://github.com/php-actions/example-phpunit/actions
-[sponsor]: https://github.com/sponsors/g105b
-[webengine-link]: https://github.com/phpgt/webengine
-[example-private-repo-link]: https://github/com/php-actions/example-private-repo
+<add connectionString="Provider=sqloledb;Server={PUT INSTANCE NAME HERE};Database=FauxBank;Integrated Security=SSPI;" name="DefaultConnection" />
