@@ -1,71 +1,21 @@
-Composer - Dependency Management for PHP
-========================================
+An example project that uses [php-actions/composer][composer-link]
+===
 
-Composer helps you declare, manage, and install dependencies of PHP projects.
+This is a trivial project that holds only simple example functionality: a repository that installs its dependencies (a WebEngine application) plus a private repository. The private repository is hosted on Github at https://github.com/php-actions/example-private-repo (the link will return 404 due to it being private).
 
-See [https://getcomposer.org/](https://getcomposer.org/) for more information and documentation.
+An SSH key has been generated specifically for this project. It is a typical public/private pair of RSA keys. The example-private-repo repository has the key added as a read-only deploy key, so anyone with access to the key can clone the repo (but not push). The key pair is stored in this repository as a [Github Secret][secret].
 
-[![Continuous Integration](https://github.com/composer/composer/workflows/Continuous%20Integration/badge.svg?branch=main)](https://github.com/composer/composer/actions)
+Check out the [Actions tab in the Github repository][actions-tab] to see the past actions workflows and their outputs. You will see that both the [public repo for `phpgt/webengine`][webengine-link] and the [private repo for `php-actions/example-private-repo`][example-private-repo-link] are downloaded successfully.
 
-Installation / Usage
---------------------
+The file at .github/workflows/ci.yml shows how to use [php-actions/composer][composer-link].
 
-Download and install Composer by following the [official instructions](https://getcomposer.org/download/).
+*** 
 
-For usage, see [the documentation](https://getcomposer.org/doc/).
+If you found this repository helpful, please consider [sponsoring the developer][sponsor].
 
-Packages
---------
-
-Find public packages on [Packagist.org](https://packagist.org). 
-
-For private package hosting take a look at [Private Packagist](https://packagist.com).
-
-Community
----------
-
-Follow [@packagist](https://twitter.com/packagist) or [@seldaek](https://twitter.com/seldaek) on Twitter for announcements, or check the [#composerphp](https://twitter.com/search?q=%23composerphp&src=typed_query&f=live) hashtag.
-
-For support, Stack Overflow offers a good collection of
-[Composer related questions](https://stackoverflow.com/questions/tagged/composer-php), or you can use the [GitHub discussions](https://github.com/composer/composer/discussions).
-
-Please note that this project is released with a
-[Contributor Code of Conduct](https://www.contributor-covenant.org/version/1/4/code-of-conduct/).
-By participating in this project and its community you agree to abide by those terms.
-
-Requirements
-------------
-
-#### Latest Composer
-
-PHP 7.2.5 or above for the latest version.
-
-#### Composer 2.2 LTS (Long Term Support)
-
-PHP versions 5.3.2 - 8.1 are still supported via the LTS releases of Composer (2.2.x). If you
-run the installer or the `self-update` command the appropriate Composer version for your PHP
-should be automatically selected.
-
-Authors
--------
-
-- Nils Adermann  | [GitHub](https://github.com/naderman)  | [Twitter](https://twitter.com/naderman) | <naderman@naderman.de> | [naderman.de](https://naderman.de)
-- Jordi Boggiano | [GitHub](https://github.com/Seldaek) | [Twitter](https://twitter.com/seldaek) | <j.boggiano@seld.be> | [seld.be](https://seld.be)
-
-See also the list of [contributors](https://github.com/composer/composer/contributors) who participated in this project.
-
-Security Reports
-----------------
-
-Please send any sensitive issue to [security@packagist.org](mailto:security@packagist.org). Thanks!
-
-License
--------
-
-Composer is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
-Acknowledgments
----------------
-
-- This project's Solver started out as a PHP port of openSUSE's
-  [Libzypp satsolver](https://en.opensuse.org/openSUSE:Libzypp_satsolver).
+[secret]: https://docs.github.com/en/actions/configuring-and-managing-workflows/creating-and-storing-encrypted-secrets
+[composer-link]: https://github.com/php-actions/composer
+[actions-tab]: https://github.com/php-actions/example-phpunit/actions
+[sponsor]: https://github.com/sponsors/g105b
+[webengine-link]: https://github.com/phpgt/webengine
+[example-private-repo-link]: https://github/com/php-actions/example-private-repo
